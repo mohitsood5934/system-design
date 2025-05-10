@@ -1,0 +1,66 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Build output
+dist/
+build/
+out/
+*.exe
+*.dll
+*.so
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Environment files
+.env
+.env.*.local
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Git
+*.orig
+*.swp
+*~
+*.bak
+
+# Python
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Other
+coverage/
+*.cover
+*.log
+*.tmp
