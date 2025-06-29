@@ -383,6 +383,55 @@ type Book {
 
 ```
 
+### Full Query
+
+```
+query Query {
+
+  authors {
+    id
+    name
+    books {
+      title
+    }
+    
+  }
+  books {
+    id,
+    title,
+    author {
+      name
+    }
+  },
+}
+```
+
+### Mutation 
+
+Mutation are used to update the data 
+
+ - typedef
+
+ ```
+  type Mutation {
+        addBook(title: String!, publishedYear: Int, authorId: ID!) : Book!
+    }
+
+```
+
+- Resolver for mutation for addBook
+
+```
+mutation AddBook($title: String!, $authorId: ID!) {
+  addBook(title: $title, authorId: $authorId) {
+    title
+  }
+},
+
+```
+
+Explore Apollo Client for graphQL queries (useQuery hook)
+- https://www.apollographql.com/docs/react/get-started
 
 
 # References

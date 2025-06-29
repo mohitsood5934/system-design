@@ -16,6 +16,13 @@ const data = {
 };
 
 export const resolvers = {
+  Author: {
+    books: (parent, arg, context, info) => {
+      console.log(parent); // parent is the Author in each iteration it has the information related to the author id
+      return data.books.filter((book) => parent.bookIds.includes(book.id));
+    },
+  },
+
   Book: {
     // parent -> parent of that key if present , args is the filter if present
     author: (parent, args, context, info) => {
@@ -25,6 +32,7 @@ export const resolvers = {
       );
     },
   },
+
   Query: {
     authors: () => {
       return data.authors;
@@ -33,4 +41,14 @@ export const resolvers = {
       return data.books;
     },
   },
+
+
+  Mutation: {
+    addBook: (parent, args, context, info) => {
+      const newBook = {...args, id: data.books.length + 1 };
+      data.books.push(newBook);
+      return newBook;
+    },
+  },
+
 };
